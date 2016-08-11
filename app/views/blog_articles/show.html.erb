@@ -1,3 +1,12 @@
 <p id="notice"><%= notice %></p>
+<div class="field">
+  <label><b>Title: </b><%= @blog_article.title %></label>
+</div>  
+<div class="field">
+  <label><b>Description: </b><%= @blog_article.content %></label>
+</div>  
+<div class="field">
+  <label><b>Favorite: </b><%= @blog_article.favorite%></label>
+</div>  
 <%= link_to 'Edit', edit_blog_article_path(@blog_article) %> |
 <%= link_to 'Back', blog_articles_path %>

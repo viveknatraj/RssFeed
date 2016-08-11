@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blog Articles</h1>
+<h1>BBC News Articles</h1>
 
+
+<%= link_to 'Click to view favorite Articles', blog_articles_path(favorite: 1) %>&nbsp;
+<%= link_to 'Fetch news from BBC', fetch_articles_path, method: :post %>
+<br/>
 <table>
   <thead>
     <tr>
@@ -22,5 +26,3 @@
 </table>
 
 <br>
-
-<%= link_to 'Fetch news from BBC', fetch_articles_path, method: :post %>

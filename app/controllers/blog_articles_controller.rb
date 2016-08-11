@@ -5,7 +5,11 @@ class BlogArticlesController < ApplicationController
   # GET /blog_articles
   # GET /blog_articles.json
   def index
-    @blog_articles = BlogArticle.all
+    @blog_articles = if params[:favorite].present?
+      BlogArticle.where(favorite: true)
+    else
+      BlogArticle.all
+    end
     respond_to do |format|
       format.html
       format.rss { render :layout => false }
