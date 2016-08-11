@@ -5,6 +5,12 @@ class BlogArticlesController < ApplicationController
   # GET /blog_articles
   # GET /blog_articles.json
   def index
+    url = 'http://feeds.bbci.co.uk/news/rss.xml'
+    count = 0
+    open(url) do |rss|
+      feed = RSS::Parser.parse(rss)
+      @title = feed.channel.title
+    end
     @blog_articles = if params[:favorite].present?
       BlogArticle.where(favorite: true)
     else

@@ -3,8 +3,13 @@
 <h1>BBC News Articles</h1>
 
 
-<%= link_to 'Click to view favorite Articles', blog_articles_path(favorite: 1) %>&nbsp;
-<%= link_to 'Fetch news from BBC', fetch_articles_path, method: :post %>
+<b>
+<% if @blog_articles.present? %>
+    <%= link_to 'Click to view favorite Articles', blog_articles_path(favorite: 1) %>&nbsp;
+    <%= link_to 'View Feeds', blog_articles_path(format: :rss)%>
+<% end %>
+<%= link_to 'Fetch news from BBC', fetch_articles_path, method: :post %>&nbsp;&nbsp;
+</b>
 <br/>
 <table>
   <thead>

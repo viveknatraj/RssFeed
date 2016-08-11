@@ -3,7 +3,7 @@ xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
     xml.title @title
-    xml.description 'This is a blog of BBC news'
+    xml.description "This is a blog of BBC news"
     xml.link 'http://feeds.bbci.co.uk/news/rss.xml'
 
     @blog_articles.each do |article|
